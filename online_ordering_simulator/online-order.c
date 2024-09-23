@@ -23,6 +23,9 @@ int main(void)
 	//array to store user input
 	//variables to store quantity of users purchase
 	char userinput[20];
+	USA_TAX = 0, USA_STANDARD = 0, USA_EXPIDITED = 0;
+	MEXICO_TAX = 0, MEXICO_STANDARD = 0, MEXICO_EXPEDITED = 0;
+	CANADA_TAX = 0, CANADA_STANDARD = 0, CANADA_EXPEDITED = 0;
 	int shirtquantity = 0, shoequantity = 0, pantsquantity = 0;
 
 	do
@@ -33,23 +36,23 @@ int main(void)
 		//reads user input for clothing type
 		scanf("%s", userinput);
 
-		if (strcmp(userInput, "exit") != 0)
+		if (strcmp(userinput, "exit") != 0)
 		{
 			int quantity;
 			printf("Enter the quantity of %s needed: ", userInput);
 			scanf("%d", &quantity);
 
-			switch (userInput[0])
+			switch (userinput[0])
 			{
 				// s, shirt or shoes
 				case 's':
-					if (strcmp(userInput, "shirt") == 0)
+					if (strcmp(userinput, "shirt") == 0)
 					{
-						shirtQuantity += quantity;
+						shirtquantity += quantity;
 					}
-					else if (strcmp(userInput, "shoes") == 0)
+					else if (strcmp(userinput, "shoes") == 0)
 					{
-						shoeQuantity += quantity;
+						shoequantity += quantity;
 					}
 					else
 					{
@@ -59,9 +62,9 @@ int main(void)
 
 				// p, pants
 				case 'p':
-					if (strcmp(userInput, "pants") == 0)
+					if (strcmp(userinput, "pants") == 0)
 					{
-						pantsQuantity += quantity;
+						pantsquantity += quantity;
 					}
 					else
 					{
@@ -73,7 +76,7 @@ int main(void)
 			}
 			printf("Clothing item '%s' successfully added to your cart.\n", userInput);
 		}
-	} while (strcmp(userInput, "exit") != 0);
+	} while (strcmp(userinput, "exit") != 0);
 
 	char destination[20], shippingMethod[20];
 	float shippingCost = 0.0, taxRate = 0.0;
