@@ -27,6 +27,7 @@ int main(void)
 	MEXICO_TAX = 0, MEXICO_STANDARD = 0, MEXICO_EXPEDITED = 0;
 	CANADA_TAX = 0, CANADA_STANDARD = 0, CANADA_EXPEDITED = 0;
 	int shirtquantity = 0, shoequantity = 0, pantsquantity = 0;
+	int SHIRT_PRICE = 0, SHOE_PRICE = 0, PANTS_PRICE = 0;
 
 	do
 	{
