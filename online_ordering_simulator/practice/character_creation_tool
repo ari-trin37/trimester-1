@@ -1,0 +1,67 @@
+using System
+
+class Character
+
+	//character properties
+	public string Name { get; set; }
+	public string Race { get; set; }
+	public string Class { get; set; }
+	public string Gender { get; set; }
+
+	//appearance
+	public string HairColor { get; set; }
+	public string EyeColor { get; set; }
+	public float Height [ get; set;]
+
+	//display of character details
+	public void DisplayCharacterInfo()
+
+		Console.WriteLine("\n-- Character Details --");
+        Console.WriteLine($"Name: {Name}");
+        Console.WriteLine($"Race: {Race}");
+        Console.WriteLine($"Class: {Class}");
+        Console.WriteLine($"Gender: {Gender}");
+        Console.WriteLine("\nAttributes:");
+        Console.WriteLine($"Strength: {Strength}");
+        Console.WriteLine($"Agility: {Agility}");
+        Console.WriteLine($"Intelligence: {Intelligence}");
+        Console.WriteLine("\nAppearance:");
+        Console.WriteLine($"Hair Color: {HairColor}");
+		 Console.WriteLine($"Eye Color: {EyeColor}");
+        Console.WriteLine($"Height: {Height} meters");
+
+class CharacterCreationTool
+{
+    static void Main()
+    {
+        Character newCharacter = new Character();
+
+        // Ask character's name
+        Console.Write("Enter your character's name: ");
+        newCharacter.Name = Console.ReadLine();
+
+        // Choose race
+        Console.Write("Choose your character's race (Human, Elf, Orc): ");
+        newCharacter.Race = Console.ReadLine();
+	    // Choose a class
+        Console.Write("Choose your character's class (Warrior, Mage, Archer): ");
+        newCharacter.Class = Console.ReadLine();
+
+        // Choose gender
+        Console.Write("Choose your character's gender (Male, Female, Other): ");
+        newCharacter.Gender = Console.ReadLine();
+
+        // Step 5: Set attributes
+        Console.Write("Enter your character's strength (1-100): ");
+        newCharacter.Strength = int.Parse(Console.ReadLine());
+
+        Console.Write("Enter your character's agility (1-100): ");
+    }
+
+}
+
+c# dev kit
+
+microsoft website --> 8th version .NET
+
+dotnet -v
