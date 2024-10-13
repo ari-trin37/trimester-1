@@ -58,10 +58,56 @@ class CharacterCreationTool
         Console.Write("Enter your character's agility (1-100): ");
     }
 
+
+using System;
+using System.Runtime.InteropServices;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        //prints message, reads input as string
+        Console.WriteLine("Enter a Response Code: ");
+        string input = Console.ReadLine();
+
+        int statusCode;
+        bool isValid = int.TryParse(input, out statusCode);
+            if (!isValid)
+        {
+            Console.WriteLine("This input is not a valid number.");
+            return;
+        }
+
+        if (statusCode >= 100 && statusCode < 200)
+            {
+                if(statusCode == 105) 
+            {
+                System.Console.WriteLine($"(status code) is invalid response");
+            }
+            else 
+            {
+                Console.WriteLine($"{statusCode} is an informational response.");
+            }
+        }
+        else if (statusCode >= 200 && statusCode < 300)
+        {
+            Console.WriteLine($"{statusCode} is a Successful Response.");
+        }
+        else if (statusCode >= 300 && statusCode <= 400)
+        {
+            Console.WriteLine($"{statusCode} is a Redirection Response");
+        }
+        else if (statusCode >= 400 && statusCode <= 500)
+        {
+            Console.WriteLine($"{statusCode} is a Client Error Response.");
+        }
+        else if (statusCode >= 500 && statusCode < 600)
+        {
+            Console.WriteLine($"{statusCode} is a Server Error Response.");
+        }
+        else
+        {
+            Console.WriteLine($"{statusCode} is not a valid Response.");
+        }
+    }
 }
-
-c# dev kit
-
-microsoft website --> 8th version .NET
-
-dotnet -v
